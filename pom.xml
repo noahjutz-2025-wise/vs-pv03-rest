@@ -27,5 +27,11 @@
             <artifactId>jersey-container-jdk-http</artifactId>
             <version>4.0.0</version>
         </dependency>
+        <!-- Dependency Injection, required for Jersey -->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
 </project>
