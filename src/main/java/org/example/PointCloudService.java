@@ -1,8 +1,10 @@
 package org.example;
 
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.MediaType;
 import org.example.entity.Point;
 
 import java.util.Comparator;
@@ -18,6 +20,7 @@ public class PointCloudService {
   }
 
   @POST
+  @Consumes(MediaType.APPLICATION_JSON)
   public Optional<Double> processPointCloud(List<Point> points) {
     final var distance =
         points.stream()
