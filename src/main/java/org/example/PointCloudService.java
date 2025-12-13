@@ -12,12 +12,6 @@ import java.util.Optional;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class PointCloudService {
-  @GET
-  @Path("health")
-  public String health() {
-    return "Hello World!";
-  }
-
   @POST
   public Optional<Double> processPointCloud(List<Point> points) {
     final var distance =
