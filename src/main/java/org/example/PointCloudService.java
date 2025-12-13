@@ -24,10 +24,7 @@ public class PointCloudService {
             .map(p -> distance(p.getX(), p.getY(), p.getZ()))
             .min(Comparator.naturalOrder());
 
-    if (distance.isPresent() && distance.get() <= 10) {
-      return distance;
-    }
-    return Optional.empty();
+    return distance.filter(it -> it <= 10);
   }
 
   private double distance(double x, double y, double z) {
