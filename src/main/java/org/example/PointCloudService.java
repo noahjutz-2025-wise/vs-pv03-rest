@@ -2,20 +2,18 @@ package org.example;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.example.entity.Point;
-
 import java.util.Comparator;
-import java.util.List;
 import java.util.Optional;
+import org.example.entity.PointCloud;
 
-@Path("points")
+@Path("point-clouds")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class PointCloudService {
   @POST
-  public Optional<Double> processPointCloud(List<Point> points) {
+  public Optional<Double> processPointCloud(PointCloud pointCloud) {
     final var distance =
-        points.stream()
+        pointCloud.getPoints().stream()
             .map(p -> distance(p.getX(), p.getY(), p.getZ()))
             .min(Comparator.naturalOrder());
 
