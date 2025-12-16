@@ -1,10 +1,9 @@
 package org.example.entity;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
-@NoArgsConstructor
 public class Warning {
-  private double distance;
+  @NonNull private Double distance;
 }
