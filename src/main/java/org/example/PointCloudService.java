@@ -20,6 +20,7 @@ public class PointCloudService {
 
   @POST
   public void processPointCloud(PointCloud pointCloud) {
+    System.out.println("PointCloudService: processPointCloud: " + pointCloud);
     final var distance =
         pointCloud.getPoints().stream()
             .map(p -> distance(p.getX(), p.getY(), p.getZ()))
@@ -32,6 +33,7 @@ public class PointCloudService {
 
   @GET
   public Optional<Warning> getWarning() {
+    System.out.println("PointCloudService: getWarning: " + warning.get() + warning.get());
     final var w = warning.get();
     warning.set(Optional.empty());
     return w;
