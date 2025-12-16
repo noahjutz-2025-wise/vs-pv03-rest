@@ -3,7 +3,7 @@
 Erstelle einen RESTful Webservice, der eine Punktwolke (x, y, z) als Payload empfängt, und den Abstand des nähesten Punktes zurück gibt, falls er weniger als 10 Units entfernt ist.
 
 ```sh
-echo '[{"x": 10.0, "y": 12.3, "z": 5.5}]' | http localhost:8080/api/v1/points
+$ echo '[{"x": 10.0, "y": 12.3, "z": 5.5}]' | http localhost:8080/api/v1/points
 HTTP/1.1 200 OK
 Content-length: 4
 Content-type: application/json
