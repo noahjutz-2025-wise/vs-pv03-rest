@@ -11,7 +11,7 @@ import java.net.InetSocketAddress;
 public class Server {
   static void main() throws IOException {
     final var config = new ResourceConfig();
-    config.register(PointCloudService.class);
+    config.register(PointService.class);
     final var server = HttpServer.create(new InetSocketAddress(8080), 0);
     final var handler = RuntimeDelegate.getInstance().createEndpoint(config, HttpHandler.class);
     server.createContext("/api/v1", handler);

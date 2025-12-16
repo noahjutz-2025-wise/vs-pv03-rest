@@ -11,7 +11,7 @@ import java.util.Optional;
 @Path("points")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class PointCloudService {
+public class PointService {
   @POST
   public Optional<Double> processPointCloud(List<Point> points) {
     final var distance =
