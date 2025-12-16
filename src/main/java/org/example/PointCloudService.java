@@ -1,5 +1,6 @@
 package org.example;
 
+import jakarta.inject.Singleton;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import java.util.Comparator;
@@ -11,6 +12,7 @@ import java.util.function.Function;
 import org.example.entity.PointCloud;
 import org.example.entity.Warning;
 
+@Singleton
 @Path("point-clouds")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -33,10 +35,8 @@ public class PointCloudService {
 
   @GET
   public Optional<Warning> getWarning() {
-    System.out.println("PointCloudService: getWarning: " + warning.get() + warning.get());
-    final var w = warning.get();
-    warning.set(Optional.empty());
-    return w;
+    System.out.println("PointCloudService: getWarning: " + warning.get());
+    return warning.getAndSet(Optional.empty());
   }
 
   private double distance(double x, double y, double z) {
